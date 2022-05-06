@@ -2,15 +2,16 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-const Product = ({product}) => {
+const Product = ({product,handleAddToMyItems}) => {
     const navigate = useNavigate()
 
     let {_id, name, company, img, description, price, supplierEmail, supplierName, quantity} = product;
 
     const handleUpdate = id =>{
-        console.log(id);
+        // console.log(id);
         navigate(`/update/${id}`);
     }
+
     
     return (
         <Card style={{ width: '18rem' }}>
@@ -24,6 +25,7 @@ const Product = ({product}) => {
                 <Card.Text>Supplier: {supplierName}</Card.Text>
                 <Card.Text>Supplier email: {supplierEmail}</Card.Text>
                 <Button onClick={()=>handleUpdate(_id)} variant="primary">Update</Button>
+                <Button onClick={()=>handleAddToMyItems(_id)} variant="primary">Add to My Items</Button>
             </Card.Body>
         </Card>
     );
