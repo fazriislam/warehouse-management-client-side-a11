@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const Product = ({product}) => {
     const navigate = useNavigate()
 
-    const {_id, name, company, img, description, price, supplierEmail, supplierName, quantity} = product;
+    let {_id, name, company, img, description, price, supplierEmail, supplierName, quantity} = product;
 
     const handleUpdate = id =>{
         console.log(id);
@@ -23,7 +23,7 @@ const Product = ({product}) => {
                 <Card.Text><small>Description: {description}</small></Card.Text>
                 <Card.Text>Supplier: {supplierName}</Card.Text>
                 <Card.Text>Supplier email: {supplierEmail}</Card.Text>
-                <Button onClick={()=>handleUpdate(_id)} variant="primary">Go somewhere</Button>
+                <Button onClick={()=>handleUpdate(_id)} variant="primary">Update</Button>
             </Card.Body>
         </Card>
     );

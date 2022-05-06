@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import Inventory from '../Inventory/Inventory';
 import UpdateForm from './UpdateForm/UpdateForm';
 
 const UpdateProduct = () => {
@@ -15,10 +16,13 @@ const UpdateProduct = () => {
         fetch(`http://localhost:5000/update/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [product]);
+    }, []);
 
     const { name, img, company, price, quantity, description, supplierName, supplierEmail } = product;
-    console.log(product);
+
+    // const handleUpdate = () =>{
+    //     console.log('clicked');
+    // }
 
     return (
         <div className='w-75 mx-auto'>
@@ -33,12 +37,17 @@ const UpdateProduct = () => {
                         <Card.Text><small>Description: {description}</small></Card.Text>
                         <Card.Text>Supplier: {supplierName}</Card.Text>
                         <Card.Text>Supplier email: {supplierEmail}</Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Delivered</Button>
+                        <Button variant="primary">Restock</Button>
+                        
                     </Card.Body>
                 </Card>
             </div>
+            <div className='my-3'>
+                <UpdateForm product={product}/>
+            </div>
             <div>
-                <UpdateForm />
+            <Link  to='/inventory' element={<Inventory/>}>Manage Inventory</Link>
             </div>
         </div>
     );
