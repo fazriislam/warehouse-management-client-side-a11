@@ -26,7 +26,7 @@ const Header = () => {
             {
               user ?
                 <>
-                <Button onClick={handleSignOut} variant="primary" type="submit">Sign Out</Button>
+                <Button onClick={handleSignOut} variant="danger" type="submit">Sign Out</Button>
                 </>
                 :
               <><Nav.Link as={Link} to="/signUp">Sign Up</Nav.Link>

@@ -10,13 +10,10 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
 
-    if (loading) {
-        return <Spinner animation='border' variant='primary'></Spinner>
-    }
+    if (loading) <Spinner animation='border' variant='primary'></Spinner>
 
-    if (!user) {
-        return <Navigate to='/signIn' state={{ from: location }} replace></Navigate>
-    }
+    if (!user) <Navigate to='/signIn' state={{ from: location }} replace></Navigate>
+    
     if (!user.emailVerified) {
         return (
             <div className='w-50 my-5 mx-auto'>
