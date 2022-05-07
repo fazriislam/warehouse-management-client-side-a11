@@ -8,7 +8,7 @@ const Product = ({product,handleAddToMyItems}) => {
     let {_id, name, company, img, description, price, supplierEmail, supplierName, quantity} = product;
 
     const handleUpdate = id =>{
-        // console.log(id);
+
         navigate(`/update/${id}`);
     }
 

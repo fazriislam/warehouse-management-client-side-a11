@@ -8,17 +8,18 @@ const Inventory = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [products]);
 
     const handleAddToMyItems = id => {
+
         let myItems;
         const selectedProduct = products.find(product => product._id === id);
         myItems = selectedProduct;
-        console.log(myItems);
-        fetch('http://localhost:5000/inventory/myItems',{
+    //     console.log(myItems);
+        fetch('http://localhost:5000/myItem',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

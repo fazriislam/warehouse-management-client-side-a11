@@ -22,7 +22,7 @@ const SocialSingUp = () => {
             </div>
             <div className=''>
                 <Button onClick={() => signInWithGoogle()} className=' d-block w-50 mx-auto my-2'>
-                    <span className='px-2'>Google Sign In</span>
+                    <span className='px-2'>Sign Up with Google</span>
                 </Button>
             </div>
         </div>
