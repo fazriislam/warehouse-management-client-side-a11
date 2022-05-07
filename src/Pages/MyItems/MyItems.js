@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-const MyItems = () => {
+const MyItems = () => {    
     
     return (
         <div>
-            {
-
-            }
+            <h2>My Items</h2>
         </div>
     );
 };
