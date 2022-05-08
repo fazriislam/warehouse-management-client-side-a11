@@ -1,6 +1,6 @@
 # Bunch of Laptop
 
-# Live Server Link [Click here]();
+# Live Server Link [Click here](https://warehouse-98797.web.app/);
 
 This is a website, title is Bunch of Laptop. A user can manage his/her products through this website easily.
 
