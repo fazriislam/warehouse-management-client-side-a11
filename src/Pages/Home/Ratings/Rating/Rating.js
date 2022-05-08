@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 const Rating = ({userRating}) => {
     const {name,email,comment,rating} = userRating;
     return (
-        <Card className='bg-dark text-white' style={{ width: '18rem' }}>
+        <Card className='bg-dark text-white' style={{ width: '16rem' }}>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>Email: {email}</Card.Text>

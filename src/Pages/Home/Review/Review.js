@@ -1,5 +1,4 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 
 const Review = () => {
@@ -20,8 +19,8 @@ const Review = () => {
         });
     };
     return (
-        <div className='w-50 mx-auto mt-3'>
-            <h2 className='text-success my-2'>Give a Review</h2>
+        <div className=' border p-2 w-50 mx-auto mt-3'>
+            <h2 className='text-danger my-2'>Give a Review</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-3' placeholder='Name' {...register("name")} />
                 <input className='mb-3' placeholder='Email' {...register("email")} />
