@@ -5,7 +5,7 @@ const AllRewiews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rating')
+        fetch('https://sheltered-springs-86908.herokuapp.com/rating')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [reviews]);

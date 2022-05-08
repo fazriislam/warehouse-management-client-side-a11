@@ -4,19 +4,19 @@ import { useForm } from "react-hook-form";
 const Review = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = review => {
-        const url = 'http://localhost:5000/rating';
-        fetch(url,{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        const url = 'https://sheltered-springs-86908.herokuapp.com/rating';
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(review)
         })
-        .then(res=>res.json())
-        .then(result=> {
-            console.log(result);
-            review.target.reset();
-        });
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                review.target.reset();
+            });
     };
     return (
         <div className=' border p-2 w-50 mx-auto mt-3'>

@@ -10,23 +10,23 @@ const UpdateProduct = () => {
     console.log(quantity);
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://sheltered-springs-86908.herokuapp.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, []);
 
 
-    const handleRestock = () =>{
-       const amount = prompt(`How many ${name} you want restock?`);
-       console.log(amount);
-       const newQuantity = parseInt(quantity) + parseInt(amount);
+    const handleRestock = () => {
+        const amount = prompt(`How many ${name} you want restock?`);
+        console.log(amount);
+        const newQuantity = parseInt(quantity) + parseInt(amount);
     }
 
 
     const { register, handleSubmit } = useForm();
     const onSubmit = UpdatedProduct => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://sheltered-springs-86908.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -43,11 +43,11 @@ const UpdateProduct = () => {
     return (
         <div className='w-75 mx-auto'>
             <div className='border mt-2 p-2'>
-            <h2 className='text-primary'>{name}</h2>
-            <img src={img} alt="" />
-            <p>Quantity: {quantity}</p>
-            <Button className='me-2' variant='primary'>Delivered</Button>
-            <Button onClick={handleRestock} variant='primary'>Restock</Button>
+                <h2 className='text-primary'>{name}</h2>
+                <img src={img} alt="" />
+                <p>Quantity: {quantity}</p>
+                <Button className='me-2' variant='primary'>Delivered</Button>
+                <Button onClick={handleRestock} variant='primary'>Restock</Button>
             </div>
             <div>
                 <h2 className='text-primary my-2'>Update information of {name}</h2>

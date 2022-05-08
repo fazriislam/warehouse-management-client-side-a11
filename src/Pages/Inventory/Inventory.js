@@ -8,7 +8,7 @@ const Inventory = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://sheltered-springs-86908.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [products]);
@@ -18,19 +18,19 @@ const Inventory = () => {
         let myItems;
         const selectedProduct = products.find(product => product._id === id);
         myItems = selectedProduct;
-        fetch('http://localhost:5000/myItem',{
+        fetch('https://sheltered-springs-86908.herokuapp.com/myItem', {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(myItems)
         })
-        .then(res=>res.json())
-        .then(result=>console.log(result))
+            .then(res => res.json())
+            .then(result => console.log(result))
 
     };
 
-    const navigateToUpdate = e =>{
+    const navigateToUpdate = e => {
         navigate(`/update/${e}`);
     }
 
@@ -39,7 +39,7 @@ const Inventory = () => {
             <h2 className='text-primary mb-3'>All Products</h2>
             <Link className='btn btn-primary me-2' to='/addProduct'>Add Product</Link>
             <Link className='btn btn-primary' to='/myItems'>My Items</Link>
-            
+
             <div className='product-container mt-2'>
                 {
                     products.map(product => <Product

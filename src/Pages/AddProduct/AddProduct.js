@@ -5,18 +5,18 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = product => {
         console.log(product);
-        const url = 'http://localhost:5000/product';
-        fetch(url,{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        const url = 'https://sheltered-springs-86908.herokuapp.com/product';
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(product)
         })
-        .then(res=>res.json())
-        .then(result=> {
-            console.log(result);
-        });
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            });
     };
     return (
         <div className='w-75 mx-auto'>

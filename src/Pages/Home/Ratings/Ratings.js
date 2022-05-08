@@ -6,7 +6,7 @@ const Ratings = () => {
     const [ratings, setRatings] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rating')
+        fetch('https://sheltered-springs-86908.herokuapp.com/rating')
             .then(res => res.json())
             .then(data => setRatings(data.slice(0, 3)))
     }, [ratings]);
