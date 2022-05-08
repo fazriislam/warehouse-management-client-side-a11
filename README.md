@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Bunch of Goods
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Live Server Link [Click here]();
+
+This is a website, title Bunch of Goods. A user can manage his/her products through this website easily.
+
+* For better performance we use React Router
+* For security purpose we use Firebase AUthentication System
+* For backend we use Node.js and Express as it's framework
+* Use MongoDB as Database
+* Use Heroku as active server
+
+
 
 ## Available Scripts
 
