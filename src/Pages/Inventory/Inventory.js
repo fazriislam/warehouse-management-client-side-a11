@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Product from './Product/Product';
 import './inventory.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 
 const Inventory = () => {
     const [products, setProducts] = useState([]);
@@ -18,7 +17,6 @@ const Inventory = () => {
         let myItems;
         const selectedProduct = products.find(product => product._id === id);
         myItems = selectedProduct;
-    //     console.log(myItems);
         fetch('http://localhost:5000/myItem',{
             method: 'POST',
             headers:{
