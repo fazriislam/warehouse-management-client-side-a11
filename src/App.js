@@ -24,7 +24,7 @@ function App() {
         <Route path='/myitems' element={
         <RequireAuth><MyItems /></RequireAuth>}>
         </Route>
-        <Route path='/update/:productId' element={
+        <Route path='/update/:id' element={
         <RequireAuth><UpdateProduct/></RequireAuth>}>
         </Route>
         <Route path='/addProduct' element={

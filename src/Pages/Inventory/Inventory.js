@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Inventory = () => {
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('http://localhost:5000/product')
@@ -29,7 +30,9 @@ const Inventory = () => {
 
     };
 
-
+    const navigateToUpdate = e =>{
+        navigate(`/update/${e}`);
+    }
 
     return (
         <div className='w-75 mt-3 mx-auto md:border p-3'>
@@ -47,6 +50,7 @@ const Inventory = () => {
                         key={product._id}
                         product={product}
                         handleAddToMyItems={handleAddToMyItems}
+                        navigateToUpdate={navigateToUpdate}
                     />)
                 }
             </div>
