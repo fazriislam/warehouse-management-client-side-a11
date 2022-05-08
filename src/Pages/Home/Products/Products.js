@@ -12,7 +12,7 @@ const Products = () => {
     }, []);
 
     return (
-        <div className='w-75 mt-3 mx-auto md:border p-3'>
+        <div className='w-75 mt-3 mx-auto p-3'>
             <h2 className='text-primary mb-3'>Our Products</h2>
             <div className='product-card-container'>
                 {

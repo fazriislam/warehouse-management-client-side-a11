@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" sticky='top' variant="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/">Bunch of Goods</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Bunch of Laptop</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -28,6 +28,7 @@ const Header = () => {
                 <>
                   <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                   <Nav.Link as={Link} to="/addProduct">Add Product</Nav.Link>
+                  <Nav.Link as={Link} to="/allReview">Reviews</Nav.Link>
                   <Button onClick={handleSignOut} variant="danger" type="submit">Sign Out</Button>
                 </>
                 :

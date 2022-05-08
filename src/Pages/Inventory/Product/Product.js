@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Product = ({product,handleAddToMyItems,navigateToUpdate}) => {
 
@@ -18,7 +17,7 @@ const Product = ({product,handleAddToMyItems,navigateToUpdate}) => {
                 <Card.Text><small>Description: {description}</small></Card.Text>
                 <Card.Text>Supplier: {supplierName}</Card.Text>
                 <Card.Text>Supplier email: {supplierEmail}</Card.Text>
-                <Button onClick={()=>handleAddToMyItems(_id)} variant="primary">Add to My Items</Button>
+                <Button onClick={()=>handleAddToMyItems(_id)} variant="primary" className='me-2'>Add to My Items</Button>
                 <Button onClick={()=>navigateToUpdate(_id)} variant="primary">Update</Button>
             </Card.Body>
         </Card>

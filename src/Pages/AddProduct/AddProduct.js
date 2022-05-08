@@ -34,7 +34,7 @@ const AddProduct = () => {
                 <input className='mb-3' placeholder='Supplier Email' {...register("supplierEmail")} />
 
                 <input className='mb-3' placeholder='photo URL' type="text" {...register("img")} />
-                <input type="submit" value="Add Service" />
+                <input type="submit" value="Add Product" />
             </form>
         </div>
     );
