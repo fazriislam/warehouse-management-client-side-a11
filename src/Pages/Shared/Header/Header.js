@@ -26,14 +26,15 @@ const Header = () => {
             {
               user ?
                 <>
-                <Nav.Link as={Link} to="/addProduct">Add Product</Nav.Link>
-                <Button onClick={handleSignOut} variant="danger" type="submit">Sign Out</Button>
+                  <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+                  <Nav.Link as={Link} to="/addProduct">Add Product</Nav.Link>
+                  <Button onClick={handleSignOut} variant="danger" type="submit">Sign Out</Button>
                 </>
                 :
-              <>
-              <Nav.Link as={Link} to="/signUp">Sign Up</Nav.Link>
-              <Nav.Link as={Link} to="/signIn">Sign In</Nav.Link>
-              </>
+                <>
+                  <Nav.Link as={Link} to="/signUp">Sign Up</Nav.Link>
+                  <Nav.Link as={Link} to="/signIn">Sign In</Nav.Link>
+                </>
             }
           </Nav>
         </Navbar.Collapse>
