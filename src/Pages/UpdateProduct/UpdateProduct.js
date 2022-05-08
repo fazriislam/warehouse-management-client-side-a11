@@ -16,28 +16,12 @@ const UpdateProduct = () => {
             .then(data => setProduct(data));
     }, []);
 
-    // const handleQuantity = () =>{
-    //     const newQuantity = parseInt(quantity) - 1;
-    //     const url = `http://localhost:5000/product/${id}`;
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(newQuantity)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result);
-    //         });
-    // }
 
-    // const handleRestock = e =>{
-    //    const amount = prompt(`How many ${name} you want restock?`);
-    //    console.log(amount);
-    //    const newQuantity = parseInt(quantity) + parseInt(amount);
-    //    console.log(newQuantity);
-    // }
+    const handleRestock = () =>{
+       const amount = prompt(`How many ${name} you want restock?`);
+       console.log(amount);
+       const newQuantity = parseInt(quantity) + parseInt(amount);
+    }
 
 
     const { register, handleSubmit } = useForm();
@@ -62,17 +46,17 @@ const UpdateProduct = () => {
             <h2 className='text-primary'>{name}</h2>
             <img src={img} alt="" />
             <p>Quantity: {quantity}</p>
-            {/* <Button onClick={handleQuantity} className='me-2' variant='primary'>Delivered</Button> */}
-            {/* <Button onClick={handleRestock} variant='primary'>Restock</Button> */}
+            <Button className='me-2' variant='primary'>Delivered</Button>
+            <Button onClick={handleRestock} variant='primary'>Restock</Button>
             </div>
             <div>
-                <h2 className='text-primary my-2'>Update {name}</h2>
+                <h2 className='text-primary my-2'>Update information of {name}</h2>
                 <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                     <input className='mb-3' placeholder='Name' {...register("name")} />
                     <input className='mb-3' placeholder='Brand' {...register("company")} />
 
                     <input className='mb-3' placeholder='Price' type="number" {...register("price")} />
-                    {/* <input className='mb-3' placeholder='Quantity' type="number" {...register("quantity")} /> */}
+                    <input className='mb-3' placeholder='Quantity' type="number" {...register("quantity")} />
 
                     <textarea className='mb-3' placeholder='Description' {...register("description")} />
 
