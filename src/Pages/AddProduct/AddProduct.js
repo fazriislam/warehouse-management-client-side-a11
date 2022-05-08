@@ -1,60 +1,41 @@
 import React from 'react';
-import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
+    const { register, handleSubmit } = useForm();
+    const onSubmit = product => {
+        console.log(product);
+        const url = 'http://localhost:5000/product';
+        fetch(url,{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res=>res.json())
+        .then(result=> {
+            console.log(result);
+        });
+    };
     return (
         <div className='w-75 mx-auto'>
             <h2 className='text-primary my-2'>Add Product</h2>
-            <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Product Name</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required />
-                </Form.Group>
+            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                <input className='mb-3' placeholder='Name' {...register("name")} />
+                <input className='mb-3' placeholder='Brand' {...register("company")} />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Brand</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Enter Brand Name" required />
-                </Form.Group>
+                <input className='mb-3' placeholder='Price' type="number" {...register("price")} />
+                <input className='mb-3' placeholder='Quantity' type="number" {...register("quantity")} />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Price</Form.Label>
-                    <Form.Control type="number" name='password' placeholder="Price" required />
-                </Form.Group>
+                <textarea className='mb-3' placeholder='Description' {...register("description")} />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Quantity</Form.Label>
-                    <Form.Control type="number" name='password' placeholder="Quantity" required />
-                </Form.Group>
+                <input className='mb-3' placeholder='Supplier Name' {...register("supplierName")} />
+                <input className='mb-3' placeholder='Supplier Email' {...register("supplierEmail")} />
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Product Description</Form.Label>
-                    <Form.Control type="text" name='password' placeholder="Short Description" required />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Supplier Name</Form.Label>
-                    <Form.Control type="text" name='password' placeholder="Supplier Name" required />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Supplier Email</Form.Label>
-                    <Form.Control type="text" name='password' placeholder="Supplier Email" required />
-                </Form.Group>
-
-                <Form.Label htmlFor="basic-url">Your Photo URL</Form.Label>
-                <InputGroup className="mb-3">
-                    <InputGroup.Text id="basic-addon3">
-                        https://example.com/users/
-                    </InputGroup.Text>
-                    <FormControl id="basic-url" aria-describedby="basic-addon3" placeholder='Photo URL'/>
-                </InputGroup>
-
-
-
-                <Button variant="primary" type="submit" className='w-50 mx-auto btn btn-primary mt-2'>
-                    Submit
-                </Button>
-            </Form>
+                <input className='mb-3' placeholder='photo URL' type="text" {...register("img")} />
+                <input type="submit" value="Add Service" />
+            </form>
         </div>
     );
 };
